@@ -329,7 +329,7 @@ body[data-test="en"] .r.on .en,body[data-test="en"] .r.on .ex,body[data-test="zh
   </div></section>
 
   <section class="sec"><div class="wrap">
-    <h2>今日成語</h2><p class="sec-sub">每天一則，順手學會一個中英對應。</p>
+    <h2>今日成語</h2><p class="sec-sub">每次進站隨機一則，順手學會一個中英對應。</p>
     <div class="card today" id="today"></div>
   </div></section>
 
@@ -585,7 +585,7 @@ const nParts=chs.reduce((a,c)=>a+c.parts.filter(p=>p.letter).length,0);
 $('#stats').innerHTML=[[fmt(rows.length),'則成語'],[chs.length,'大章'],[nParts,'個小分類'],[fmt(rows.filter(r=>r.x).length),'則英文例句']].map(([a,b])=>`<div class="stat"><b>${a}</b><span>${b}</span></div>`).join('');
 $('#try').innerHTML+=['醍醐灌頂','serendipity','令人玩味','connect the dots','觸類旁通','larger than life'].map(t=>`<button class="chip" type="button" data-q="${esc(t)}">${esc(t)}</button>`).join('');
 $('#chgrid').innerHTML=chs.map(c=>`<a class="card chcard" href="#c${c.id}" style="--cc:var(--c${c.id})"><div class="top"><span class="cnum">${esc(c.num)}</span><h3>${esc(c.name)}</h3><span class="cn2">${fmt(c.n)} 則</span></div><p>${esc(c.desc)}</p>${c.parts.length>1?`<div class="pt">${c.parts.map(p=>p.letter+' '+esc(p.name)).join('　')}</div>`:''}<div class="smp">${c.sample.map(h=>`<span>${esc(h)}</span>`).join('')}</div></a>`).join('');
-let todayK=(function(){const d=new Date();const n=Math.floor((d.getTime()-d.getTimezoneOffset()*6e4)/864e5);return (Math.imul(n,2654435761)>>>0)%rows.length})();
+let todayK=Math.floor(Math.random()*rows.length);
 function renderToday(){
   const r=rows[todayK],c=chBy[r.c],p=partBy[r.p];
   const T=$('#today');
