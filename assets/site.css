@@ -35,6 +35,11 @@ a:hover{text-decoration:underline}
 .nav a:hover{background:var(--hd);color:var(--fg)}
 .theme{border:1px solid var(--ln);background:var(--card);border-radius:99px;padding:4px 12px;font-size:.82rem;color:var(--mu);white-space:nowrap}
 .theme:hover{color:var(--fg)}
+.lang{border:1px solid var(--ln);background:var(--card);border-radius:99px;padding:4px 12px;font-size:.82rem;color:var(--mu);white-space:nowrap;text-decoration:none!important}
+.lang:hover{color:var(--fg)}
+.r .py{display:block;font:400 .84rem/1.45 var(--sans);letter-spacing:0;color:var(--mu);margin-top:1px}
+.ent .pyl{margin:4px 0 0;font-size:1.08rem;color:var(--mu);letter-spacing:.02em}
+html[lang="en"] .r .hz{letter-spacing:.02em}
 
 /* 共用元件 */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:6px 18px;border:1.5px solid var(--ln);border-radius:10px;background:var(--card);color:var(--fg);font-weight:500;font-size:.95rem;text-decoration:none!important}
@@ -134,7 +139,8 @@ a:hover{text-decoration:underline}
   .nav{order:3;width:100%;margin-left:0;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
   .nav::-webkit-scrollbar{display:none}
   .nav a{white-space:nowrap}
-  .theme{margin-left:auto}
+  .lang{margin-left:auto}.theme{margin-left:0}
+  .bar{gap:8px}.lang,.theme{padding:3px 9px;font-size:.76rem}
   .brand{font-size:1.02rem}
   .seal{width:32px;height:32px}
   .be{font-size:.82rem;letter-spacing:.1em}
@@ -144,5 +150,5 @@ a:hover{text-decoration:underline}
   .ent .big{font-size:2.4rem}
   .ent .enl li{font-size:1.15rem}
 }
-@media (max-width:480px){.fgrid{grid-template-columns:1fr}.pn{grid-template-columns:1fr}.pn .nx,.pn .pv{grid-column:1;text-align:left}}
+@media (max-width:480px){.brand{font-size:.92rem;gap:8px}.seal{width:28px;height:28px}.be{font-size:.76rem;padding-right:.5em;margin-right:.5em}html[lang="en"] .brand{letter-spacing:.02em}.fgrid{grid-template-columns:1fr}.pn{grid-template-columns:1fr}.pn .nx,.pn .pv{grid-column:1;text-align:left}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
