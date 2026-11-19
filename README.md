@@ -2,7 +2,7 @@
 
 ECHO: English–Chinese Idiom Handbook Online
 
-依使用場合分類、附英文對應與例句的中英成語對照網站（1,950 則成語、十二章）。
+依使用場合分類、附英文對應與例句的中英成語對照網站（1,954 則成語、十二章）。
 
 網址：https://idiom-guide.github.io/
 

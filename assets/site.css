@@ -152,3 +152,16 @@ html[lang="en"] .r .hz{letter-spacing:.02em}
 }
 @media (max-width:480px){.brand{font-size:.92rem;gap:8px}.seal{width:28px;height:28px}.be{font-size:.76rem;padding-right:.5em;margin-right:.5em}html[lang="en"] .brand{letter-spacing:.02em}.fgrid{grid-template-columns:1fr}.pn{grid-template-columns:1fr}.pn .nx,.pn .pv{grid-column:1;text-align:left}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* 擴充內容（意思、中文例句、用法、近義／反義） */
+.ent .ld{margin:0;font-size:1.06rem;line-height:1.75}
+.ent .tn{display:inline-block;margin-left:8px;padding:1px 9px;border-radius:999px;background:var(--hd);color:var(--mu);font:500 .8rem var(--sans);letter-spacing:.04em;vertical-align:2px}
+.ent .exs+.exs{margin-top:6px}
+.ent .exs.zx{font-family:var(--serif);font-size:1.12rem}
+.ent .enx{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.ent .enx li{line-height:1.5}.ent .enx small{color:var(--mu);margin-left:6px}
+.ent .rl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ent .rl li{padding:10px 14px;border:1px solid var(--ln);border-radius:10px;min-width:0}
+.ent .rl .rh{font:700 1.08rem var(--serif);letter-spacing:.04em}.ent .rl .rh .emo{margin-right:6px}
+.ent .rl .re{color:var(--mu);margin-left:8px;font-size:.92rem}
+.ent .rl .rd{margin:4px 0 0;line-height:1.6}.ent .rl .rz{margin:4px 0 0;color:var(--mu);font-size:.95rem;line-height:1.6}
