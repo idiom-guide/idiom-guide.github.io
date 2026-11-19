@@ -165,3 +165,8 @@ html[lang="en"] .r .hz{letter-spacing:.02em}
 .ent .rl .rh{font:700 1.08rem var(--serif);letter-spacing:.04em}.ent .rl .rh .emo{margin-right:6px}
 .ent .rl .re{color:var(--mu);margin-left:8px;font-size:.92rem}
 .ent .rl .rd{margin:4px 0 0;line-height:1.6}.ent .rl .rz{margin:4px 0 0;color:var(--mu);font-size:.95rem;line-height:1.6}
+/* 回到頁首（與互動版的 .fab 相同樣式） */
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:38;display:flex;flex-direction:column;align-items:flex-end;gap:10px;transition:opacity .2s,transform .2s}
+.fab.off{opacity:0;transform:translateY(12px);pointer-events:none}
+.fab .up{width:48px;height:48px;border:1px solid var(--ac);border-radius:50%;background:var(--ac);color:var(--acf);font-size:1.3rem;line-height:1;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+.fab .up:hover{filter:brightness(1.08)}
