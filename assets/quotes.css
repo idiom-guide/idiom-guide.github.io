@@ -1,0 +1,98 @@
+/* ECHO 格言賞析頁（/quotes/）。沿用 site.css 的色彩 token，另加 13 個主題色 --q0…--q12。 */
+.qpage [hidden]{display:none!important}
+.qpage{
+  --en:"Cormorant Garamond","Iowan Old Style","Palatino Linotype",Georgia,"Noto Serif TC",serif;
+  --q0:#b9780e;--q1:#b4443b;--q2:#3b6ab0;--q3:#5a6f8f;--q4:#b23f77;--q5:#c2491d;--q6:#1f7d6e;--q7:#3f8040;--q8:#7a6a1f;--q9:#2a7fa3;--q10:#75559f;--q11:#96611e;--q12:#2e7d4f;
+  --c0:var(--q0);
+  padding-bottom:40px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .qpage{--q0:#e3aa4a;--q1:#ec8279;--q2:#82aae8;--q3:#a3b6d4;--q4:#ee8fbb;--q5:#ef8b57;--q6:#5cc0ad;--q7:#7fc47d;--q8:#c5b85a;--q9:#6cc3e3;--q10:#b79ae0;--q11:#d9a85e;--q12:#6cc79a}}
+:root[data-theme="dark"] .qpage{--q0:#e3aa4a;--q1:#ec8279;--q2:#82aae8;--q3:#a3b6d4;--q4:#ee8fbb;--q5:#ef8b57;--q6:#5cc0ad;--q7:#7fc47d;--q8:#c5b85a;--q9:#6cc3e3;--q10:#b79ae0;--q11:#d9a85e;--q12:#6cc79a}
+
+.qhead{padding:22px 0 14px}
+.qhead h1{margin:8px 0 6px;font:700 clamp(1.6rem,4vw,2.1rem)/1.3 var(--serif);letter-spacing:.08em;text-wrap:balance}
+.qhead p{margin:0;max-width:44em;color:var(--mu)}
+
+/* 今日格言 */
+.qhero{position:relative;border:1px solid var(--ln);border-radius:22px;background:radial-gradient(1200px 400px at 85% -20%,color-mix(in srgb,var(--hl) 35%,transparent),transparent 60%),var(--card);box-shadow:var(--sh);padding:34px 36px 30px 92px;overflow:hidden;min-width:0;display:grid;grid-template-columns:minmax(0,1fr) clamp(190px,28vw,296px);column-gap:30px;align-items:start}
+.qhero>*{grid-column:1;min-width:0}
+.qhero>.qvl,.qhero>.qqm{grid-column:auto}
+.qhero>.qdl{grid-column:1/-1}
+.qvl{position:absolute;left:30px;top:34px;writing-mode:vertical-rl;font:700 1.05rem var(--serif);letter-spacing:.5em;color:var(--ac)}
+.qvl:after{content:"";display:block;width:1px;height:70px;background:var(--ac);margin:12px auto 0;opacity:.5}
+.qqm{position:absolute;right:clamp(230px,32vw,340px);top:-34px;font:italic 500 13rem/1 var(--en);color:var(--ac);opacity:.09;pointer-events:none;user-select:none}
+.qmeta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;color:var(--mu);font-size:.9rem;letter-spacing:.06em}
+.qdt{font-family:var(--serif)}
+.qcat{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--cc,var(--ln));color:var(--cc,var(--mu));border-radius:999px;padding:1px 12px;font-weight:500}
+.qhq{margin:18px 0 6px;font:italic 500 clamp(1.7rem,4.4vw,2.9rem)/1.28 var(--en);letter-spacing:.005em;text-wrap:balance;overflow-wrap:anywhere}
+.qhq.m{font-size:clamp(1.45rem,3.3vw,2.3rem)}.qhq.l{font-size:clamp(1.25rem,2.6vw,1.85rem);line-height:1.32}
+.qhz{margin:0 0 6px;font:600 clamp(1.1rem,2.4vw,1.35rem)/1.7 var(--serif);letter-spacing:.06em}
+.qby{margin:10px 0 0;color:var(--mu);font-size:.95rem}.qby b{color:var(--fg);font-weight:600}
+.qhero>.qartw{grid-column:2;grid-row:1/span 5;align-self:center;justify-self:center;width:min(100%,164px);pointer-events:none}
+.qartw svg{animation:qartin .5s ease both}
+@keyframes qartin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.qartw svg{animation:none}}
+.qacts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.qbtn{border:1px solid var(--ln);background:var(--hd);border-radius:999px;padding:7px 18px;font-size:.92rem;text-decoration:none!important;color:var(--fg);display:inline-block}
+.qbtn:hover{border-color:var(--ac);color:var(--ac)}
+.qbtn.pri{background:var(--ac);color:var(--acf);border-color:var(--ac)}.qbtn.pri:hover{color:var(--acf);filter:brightness(1.07)}
+
+/* 圖示：單一物件、細線條、依主題上色（無方框） */
+.qic{display:block;width:100%;height:auto;color:var(--cc);overflow:visible}
+
+/* 細節面板 */
+.qdl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px;margin-top:26px;padding-top:22px;border-top:1px dashed var(--ln)}
+.qdl>div{min-width:0}.qdl .w{grid-column:1/-1}
+.qdl h4{margin:0 0 4px;font:700 .78rem var(--sans);letter-spacing:.2em;color:var(--mu)}
+.qdl p{margin:0;line-height:1.75}
+.qdl .ex{font-family:var(--en);font-style:italic;font-size:1.18rem;line-height:1.5}
+.qdl .exz{color:var(--mu);font-size:.95rem;margin-top:2px}
+.qvs{display:flex;flex-wrap:wrap;gap:8px}
+.qv{display:inline-flex;gap:8px;align-items:baseline;border:1px solid var(--ln);background:var(--hd);border-radius:10px;padding:3px 11px;font-size:.92rem}
+.qv b{font:600 1.05rem var(--en);letter-spacing:.02em}.qv span{color:var(--mu);font-size:.86rem}
+.qnote{font-size:.88rem;color:var(--mu);border-left:3px solid var(--hl);padding:2px 0 2px 10px}
+.qhero .qsrc{display:none}
+
+/* 瀏覽 */
+.qsec{font:700 1.5rem var(--serif);letter-spacing:.1em;margin:46px 0 4px;scroll-margin-top:104px}
+.qsub{margin:0 0 16px;color:var(--mu)}
+.qtools{display:grid;gap:12px}
+.qsrch{width:100%;border:1px solid var(--ln);background:var(--card);color:var(--fg);border-radius:12px;padding:10px 14px;font:inherit}
+.qsrch:focus{outline:2px solid var(--ac);outline-offset:1px}
+.qchips{display:flex;flex-wrap:wrap;gap:8px}
+.qchip{border:1px solid var(--ln);background:var(--card);border-radius:999px;padding:5px 14px;font-size:.92rem;display:inline-flex;gap:6px;align-items:center}
+.qchip small{color:var(--mu)}
+.qchip[aria-pressed=true]{background:var(--cc,var(--ac));border-color:var(--cc,var(--ac));color:#fff}
+.qchip[aria-pressed=true] small{color:inherit;opacity:.85}
+:root[data-theme="dark"] .qchip[aria-pressed=true]{color:#141210}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .qchip[aria-pressed=true]{color:#141210}}
+.qthemes{padding:10px 12px;border:1px dashed var(--ln);border-radius:12px}
+.qthemes .qchip{font-size:.86rem;padding:3px 11px}
+.qlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px;align-items:start}
+.qcard{border:1px solid var(--ln);border-top:3px solid var(--cc,var(--ln));border-radius:14px;background:var(--card);min-width:0;box-shadow:var(--sh);scroll-margin-top:104px}
+.qcard[hidden]{display:none}
+.qcard>details>summary{list-style:none;cursor:pointer;display:block;padding:16px 18px 14px}
+.qcard>details>summary::-webkit-details-marker{display:none}
+.qt{display:flex;gap:10px;align-items:flex-start}
+.qe{font-size:1.6rem;line-height:1.2}
+.qtx{min-width:0;display:block}
+.qtx .q{display:block;font:italic 500 1.28rem/1.35 var(--en);overflow-wrap:anywhere}
+.qtx .z{display:block;font:500 .95rem/1.6 var(--serif);color:var(--mu);margin-top:4px}
+.qtx .zp{display:block;font:400 .8rem/1.5 var(--sans);color:var(--mu);margin-top:1px;letter-spacing:.01em}
+.qhp{margin:0 0 6px;font:400 .88rem/1.5 var(--sans);color:var(--mu)}
+.qtx .a{display:block;font-size:.82rem;color:var(--mu);margin-top:6px;letter-spacing:.04em}
+.qarr{margin-left:auto;color:var(--mu);transition:transform .2s;flex:none}
+.qcard details[open] .qarr{transform:rotate(180deg)}
+.qcard .qdl{grid-template-columns:1fr;margin:0 18px 18px;padding-top:14px}
+.qnone{color:var(--mu);padding:20px 0}
+.qabout{margin-top:48px;padding-top:20px;border-top:1px solid var(--ln);color:var(--mu);font-size:.9rem}
+.qabout p{margin:0 0 6px;max-width:48em}
+@media (max-width:760px){
+  .qhero{padding:26px 20px 26px;grid-template-columns:minmax(0,1fr)}
+  .qhero>.qartw{grid-column:1;grid-row:auto;order:1;justify-self:center;width:min(132px,40%);margin-top:18px}
+  .qacts{order:2}.qhero>.qdl{order:3}
+  .qvl{position:static;writing-mode:horizontal-tb;letter-spacing:.3em;margin-bottom:8px;font-size:.95rem}
+  .qvl:after{display:none}
+  .qqm{font-size:9rem;right:10px;top:-20px}
+  .qdl,.qlist{grid-template-columns:1fr}
+}
