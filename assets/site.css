@@ -34,6 +34,7 @@ a:hover{text-decoration:underline}
 .nav a{padding:6px 11px;border-radius:99px;color:var(--mu);font-size:.95rem;text-decoration:none!important}
 .nav a:hover{background:var(--hd);color:var(--fg)}
 .nav a[aria-current="page"]{background:var(--hd);color:var(--fg);font-weight:700}
+.nav a{display:inline-flex;align-items:center;gap:5px}.nav .ni{width:15px;height:15px;flex:none;opacity:.8;transition:transform .2s}.nav a:hover .ni{transform:rotate(-8deg) scale(1.1)}.nav a[aria-current] .ni{opacity:1}@media (prefers-reduced-motion:reduce){.nav .ni{transition:none}.nav a:hover .ni{transform:none}}
 html[lang="en"] .nav{gap:2px}
 html[lang="en"] .nav a{padding:6px 8px;font-size:.9rem}
 .theme{border:1px solid var(--ln);background:var(--card);border-radius:99px;padding:4px 12px;font-size:.82rem;color:var(--mu);white-space:nowrap}
@@ -144,6 +145,7 @@ html[lang="en"] .r .hz{letter-spacing:.02em}
   .nav a{white-space:nowrap}
   .lang{margin-left:auto}
 }
+.bar.two .nav{order:3;width:100%;margin-left:0;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}.bar.two .nav::-webkit-scrollbar{display:none}.bar.two .nav a{white-space:nowrap}.bar.two .lang{margin-left:auto}
 @media (max-width:720px){
   .nav{order:3;width:100%;margin-left:0;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
   .nav::-webkit-scrollbar{display:none}

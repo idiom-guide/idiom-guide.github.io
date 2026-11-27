@@ -28,7 +28,7 @@
 .qhq.m{font-size:clamp(1.45rem,3.3vw,2.3rem)}.qhq.l{font-size:clamp(1.25rem,2.6vw,1.85rem);line-height:1.32}
 .qhz{margin:0 0 6px;font:600 clamp(1.1rem,2.4vw,1.35rem)/1.7 var(--serif);letter-spacing:.06em}
 .qby{margin:10px 0 0;color:var(--mu);font-size:.95rem}.qby b{color:var(--fg);font-weight:600}
-.qhero>.qartw{grid-column:2;grid-row:1/span 5;align-self:center;justify-self:center;width:min(100%,164px);pointer-events:none}
+.qhero>.qartw{grid-column:2;grid-row:1/span 2;align-self:center;justify-self:center;width:min(100%,164px);pointer-events:none}
 .qartw svg{animation:qartin .5s ease both}
 @keyframes qartin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.qartw svg{animation:none}}
@@ -41,7 +41,7 @@
 .qic{display:block;width:100%;height:auto;color:var(--cc);overflow:visible}
 
 /* 細節面板 */
-.qdl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px;margin-top:26px;padding-top:22px;border-top:1px dashed var(--ln)}
+.qdl{display:grid;align-content:start;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px;margin-top:26px;padding-top:22px;border-top:1px dashed var(--ln)}
 .qdl>div{min-width:0}.qdl .w{grid-column:1/-1}
 .qdl h4{margin:0 0 4px;font:700 .78rem var(--sans);letter-spacing:.2em;color:var(--mu)}
 .qdl p{margin:0;line-height:1.75}
@@ -96,3 +96,5 @@
   .qqm{font-size:9rem;right:10px;top:-20px}
   .qdl,.qlist{grid-template-columns:1fr}
 }
+
+.qtxt{display:flex;flex-direction:column;justify-content:flex-start}
