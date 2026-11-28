@@ -1,0 +1,67 @@
+/* ECHO Blog（/blog/、/en/blog/）樣式：所有規則限定在 .bl 之內，避免和站內共用樣式衝突。中英文版共用。 */
+.bl{--gd:#24714f;--gds:#e9f5ee;--wn:#9a5b00;--wns:#fff3dc;font-size:16px;line-height:1.8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bl{--gd:#6cc79a;--gds:#1d3226;--wn:#e6ae52;--wns:#33280f}}
+:root[data-theme="dark"] .bl{--gd:#6cc79a;--gds:#1d3226;--wn:#e6ae52;--wns:#33280f}
+.bl [hidden]{display:none!important}
+
+/* 列表頁頁首 */
+.bl .bl-head{padding:22px 0 8px}
+.bl .bl-head h1{margin:8px 0 6px;font:700 clamp(1.6rem,4vw,2.1rem)/1.3 var(--serif);letter-spacing:.08em;text-wrap:balance}
+.bl .bl-head .lead{margin:0;max-width:44em;color:var(--mu)}
+
+/* 文章列表 */
+.bl .bl-list{list-style:none;margin:22px 0 40px;padding:0;display:grid;gap:14px;max-width:52em}
+.bl .bl-card{display:flex;gap:16px;align-items:flex-start;padding:18px 18px 16px;border:1px solid var(--ln);border-radius:14px;background:var(--card);box-shadow:var(--sh);color:var(--fg);text-decoration:none!important;transition:transform .18s,border-color .18s}
+.bl .bl-card:hover{transform:translateY(-2px);border-color:var(--ac)}
+.bl .bl-ico{flex:none;width:52px;height:52px;border-radius:12px;background:var(--hd);color:var(--ac);display:grid;place-items:center}
+.bl .bl-ico svg{width:30px;height:30px}
+.bl .bl-txt{display:block;min-width:0;flex:1}
+.bl .bl-card .bl-meta{margin-bottom:4px}
+.bl .bl-card h2{margin:0 0 6px;font:700 clamp(1.1rem,3vw,1.3rem)/1.4 var(--serif);letter-spacing:.03em;text-wrap:balance}
+.bl .bl-card p{margin:0 0 8px;color:var(--mu);font-size:.95rem;line-height:1.7}
+.bl .bl-more{font-size:.9rem;color:var(--ac);font-weight:500}
+.bl .bl-card:hover .bl-more{text-decoration:underline}
+
+/* 共用：日期、標籤 */
+.bl .bl-meta{display:flex;flex-wrap:wrap;gap:2px 12px;align-items:center;font-size:.86rem;color:var(--mu)}
+.bl .bl-tags{display:inline-flex;flex-wrap:wrap;gap:6px}
+.bl .bl-tag{display:inline-block;font-size:.78rem;line-height:1.7;padding:0 9px;border:1px solid var(--ln);border-radius:99px;color:var(--mu);background:var(--bg)}
+
+/* 文章頁 */
+.bl .bl-post{max-width:42em;margin:0 auto;padding:6px 0 10px}
+.bl .bl-post>header{padding:14px 0 6px}
+.bl .bl-post h1{margin:8px 0 12px;font:700 clamp(1.55rem,4.6vw,2.25rem)/1.35 var(--serif);letter-spacing:.04em;text-wrap:balance}
+.bl .bl-post>header .bl-meta{gap:6px 14px}
+.bl .bl-body{margin-top:18px;font-size:1.06rem;line-height:1.95}
+.bl .bl-body h2{margin:2.1em 0 .6em;font:700 1.35rem/1.4 var(--serif);letter-spacing:.03em;text-wrap:balance}
+.bl .bl-body h3{margin:0 0 8px;font:700 1.05rem/1.4 var(--serif);letter-spacing:.03em}
+.bl .bl-body p{margin:0 0 1.15em}
+.bl .bl-lead{padding:2px 0 2px 16px;border-left:3px solid var(--ac);font-size:1.12rem;line-height:1.9}
+.bl .bl-call{margin:1.4em 0;padding:14px 18px;border-radius:12px;background:var(--hd);border-left:4px solid var(--ac);font:600 1.08rem/1.8 var(--serif);letter-spacing:.02em}
+.bl .bl-steps{margin:0 0 1.2em;padding:0;list-style:none;counter-reset:s}
+.bl .bl-steps li{position:relative;margin:0 0 12px;padding:12px 14px 12px 52px;border:1px solid var(--ln);border-radius:12px;background:var(--card);counter-increment:s}
+.bl .bl-steps li::before{content:counter(s);position:absolute;left:14px;top:12px;width:28px;height:28px;border-radius:50%;background:var(--ac);color:var(--acf);display:grid;place-items:center;font:700 .95rem var(--serif)}
+.bl .bl-steps b{color:var(--ac)}
+.bl .bl-split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 1.2em}
+.bl .bl-split>section{min-width:0;padding:14px 16px 6px;border-radius:12px;border:1px solid var(--ln)}
+.bl .bl-split ul{margin:0 0 8px;padding-left:1.2em}
+.bl .bl-split li{margin:0 0 8px;line-height:1.75}
+.bl .bl-ai{background:var(--gds);border-color:color-mix(in srgb,var(--gd) 35%,transparent)!important}
+.bl .bl-ai h3{color:var(--gd)}
+.bl .bl-me{background:var(--wns);border-color:color-mix(in srgb,var(--wn) 35%,transparent)!important}
+.bl .bl-me h3{color:var(--wn)}
+@media (max-width:640px){.bl .bl-split{grid-template-columns:1fr}.bl .bl-body{font-size:1.03rem}.bl .bl-card{padding:14px}.bl .bl-ico{width:44px;height:44px}}
+
+/* 文章尾端 */
+.bl .bl-end{margin:34px 0 0;padding-top:18px;border-top:1px solid var(--ln);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.bl .bl-end .by{font-size:.9rem;color:var(--mu)}
+.bl .bl-end .by b{color:var(--fg);font-family:var(--serif)}
+.bl .bl-acts{display:flex;flex-wrap:wrap;gap:10px}
+
+/* 英文版：字體與行高較小 */
+.bl-en.bl .bl-body{font-size:1.05rem;line-height:1.8}
+.bl-en.bl .bl-lead{font-size:1.1rem;line-height:1.75}
+.bl-en.bl .bl-head h1,.bl-en.bl .bl-post h1{letter-spacing:.01em}
+.bl-en.bl .bl-card h2{letter-spacing:.01em}
+.bl-en.bl .bl-call{font-size:1.05rem;line-height:1.7}
+@media (prefers-reduced-motion:reduce){.bl .bl-card{transition:none}.bl .bl-card:hover{transform:none}}
